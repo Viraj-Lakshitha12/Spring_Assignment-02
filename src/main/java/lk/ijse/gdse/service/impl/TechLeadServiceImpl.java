@@ -20,7 +20,7 @@ public class TechLeadServiceImpl implements TechLeadService {
     private TechLeadRepo techLeadRepo;
 
     @Override
-    public void saveTechLead(TechLeadDTO dto) {
+    public void saveTechLead(TechLeadDTO dto) throws RuntimeException {
         if(!techLeadRepo.existsById(dto.getTechLeadId())){
             TechLead techLead = new TechLead(dto.getTechLeadId(), dto.getName(), dto.getAddress(), dto.getSalary());
             techLeadRepo.save(techLead);

@@ -19,7 +19,7 @@ public class ProjectController {
         return new ResponseUtil(200,"Success",projectService.getAllProject());
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/post", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveProject(@ModelAttribute ProjectDTO projectDTO){
 
         if(projectDTO.getProjectId()==null || !projectDTO.getProjectId().matches("\"^(P)[-]?[0-9]{3}$\"")){
